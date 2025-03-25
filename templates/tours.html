@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Наши туры{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Наши туры</h1>
+<div class="row">
+    {% for tour in tours %}
+    <div class="col-md-4 mb-4 tour-card">
+        <div class="card h-100">
+            <img src="{{ url_for('static', filename='images/' + tour.image) }}" class="card-img-top" alt="{{ tour.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ tour.title }}</h5>
+                <p class="card-text">{{ tour.description }}</p>
+                <p class="text-muted">{{ tour.duration }} • {{ tour.price }} руб.</p>
+            </div>
+            <div class="card-footer bg-white">
+                <a href="{{ url_for('tour_detail', tour_id=tour.id) }}" class="btn btn-outline-primary">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

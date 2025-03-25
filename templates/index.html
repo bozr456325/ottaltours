@@ -1,0 +1,323 @@
+{% extends "base.html" %}
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="video-container rounded-4 overflow-hidden">
+        <video autoplay muted loop playsinline>
+            <source src="{{ url_for('static', filename='videos/hero-bg.mp4') }}" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-11 col-sm-10 col-md-8 text-center px-4"> <!-- Добавлены ограничения по ширине -->
+                <h1 class="hero-title text-white mb-3">OTALTOUR</h1>
+                <p class="hero-subtitle text-white mb-4">Откройте для себя мир с нами</p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 px-2">
+                    <a href="#tours" class="btn btn-primary btn-custom rounded-pill">Наши туры</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-custom rounded-pill">Консультация</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок популярных стран -->
+<section class="popular-countries py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-title mb-3">Популярные направления</h2>
+                <p class="section-subtitle text-muted">Самые востребованные страны для путешествий</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Страна 1 -->
+            <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/italy.png') }}"
+                             alt="Италия"
+                             class="img-fluid rounded-circle"
+                             style="width: 80px; height: 80px; object-fit: cover;">
+                    </div>
+                    <h3 class="h5 mb-2">Италия</h3>
+                    <p class="small text-muted mb-0">от 45 000 ₽</p>
+                </div>
+            </div>
+
+            <!-- Страна 2 -->
+            <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/thailand.png') }}"
+                             alt="Тайланд"
+                             class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="h5 mb-2">Тайланд</h3>
+                    <p class="small text-muted mb-0">от 32 000 ₽</p>
+                </div>
+            </div>
+
+            <!-- Страна 3 -->
+            <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/turkey.png') }}"
+                             alt="Турция"
+                             class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="h5 mb-2">Турция</h3>
+                    <p class="small text-muted mb-0">от 28 000 ₽</p>
+                </div>
+            </div>
+
+            <!-- Страна 4 -->
+            <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/france.png') }}"
+                             alt="Франция"
+                             class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="h5 mb-2">Франция</h3>
+                    <p class="small text-muted mb-0">от 52 000 ₽</p>
+                </div>
+            </div>
+                        <!-- Страна 6 -->
+            <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/abhazia.png') }}"
+                             alt="Абхазия"
+                             class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="h5 mb-2">Абхазия</h3>
+                    <p class="small text-muted mb-0">от 52 000 ₽</p>
+                </div>
+            </div>
+
+                        <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/russia.png') }}"
+                             alt="Россия"
+                             class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="h5 mb-2">Россия</h3>
+                    <p class="small text-muted mb-0">от 52 000 ₽</p>
+                </div>
+            </div>
+
+                        <!-- Страна 7 -->
+            <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/Switzerland.png') }}"
+                             alt="Швейцария"
+                             class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="h5 mb-2">Швейцария</h3>
+                    <p class="small text-muted mb-0">от 52 000 ₽</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="country-card text-center p-3 bg-white rounded shadow-sm">
+                    <div class="country-flag mb-3">
+                        <img src="{{ url_for('static', filename='images/flags/egipet.png') }}"
+                             alt="Египет"
+                             class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="h5 mb-2">Египет</h3>
+                    <p class="small text-muted mb-0">от 52 000 ₽</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Новая галерея красивых мест -->
+<section class="gallery-section py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-title mb-3">Красивые места мира</h2>
+                <p class="section-subtitle text-muted">Вдохновляющие направления для вашего следующего путешествия</p>
+                <div class="divider mx-auto my-3"></div>
+            </div>
+        </div>
+
+        <div class="row g-3 gallery-grid">
+            <!-- Место 1 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/santorini.jpg') }}"
+                         alt="Санторини, Греция"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Санторини</h3>
+                        <p>Греция</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Место 2 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/bali.jpg') }}"
+                         alt="Бали, Индонезия"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Бали</h3>
+                        <p>Индонезия</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Место 3 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/maldives.jpg') }}"
+                         alt="Мальдивы"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Мальдивы</h3>
+                        <p>Мальдивские острова</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Место 4 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/kyoto.jpg') }}"
+                         alt="Киото, Япония"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Киото</h3>
+                        <p>Япония</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Место 5 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/paris.jpg') }}"
+                         alt="Париж, Франция"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Париж</h3>
+                        <p>Франция</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Место 6 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/newyork.jpg') }}"
+                         alt="Нью-Йорк, США"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Нью-Йорк</h3>
+                        <p>США</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Место 7 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/cappadocia.jpg') }}"
+                         alt="Каппадокия, Турция"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Каппадокия</h3>
+                        <p>Турция</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Место 8 -->
+            <div class="col-6 col-md-4 col-lg-3 gallery-item">
+                <div class="gallery-card">
+                    <img src="{{ url_for('static', filename='images/gallery/rio.jpg') }}"
+                         alt="Рио-де-Жанейро, Бразилия"
+                         class="img-fluid">
+                    <div class="gallery-overlay">
+                        <h3>Рио-де-Жанейро</h3>
+                        <p>Бразилия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Заголовок "Самые популярные туры" -->
+<div class="container mt-5 mb-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2 class="display-5 fw-bold">Самые популярные туры</h2>
+            <div class="divider mx-auto my-3"></div>
+            <p class="text-muted">Проверенные направления для вашего идеального отдыха</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Секции с турами -->
+<main id="tours">
+
+    {% for tour in featured_tours %}
+
+    <section class="tour-section {% if loop.index % 2 == 0 %}bg-light{% endif %}">
+
+
+
+        <div class="container py-5">
+            <div class="row align-items-center tour-card {% if loop.index % 2 == 0 %}flex-row-reverse{% endif %}">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="{{ url_for('static', filename='images/' + tour.image) }}"
+                         class="img-fluid rounded shadow"
+                         alt="{{ tour.title }}">
+                </div>
+
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-3">{{ tour.title }}</h2>
+                    <p class="lead">{{ tour.description }}</p>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <span class="badge bg-primary me-2">{{ tour.duration }}</span>
+                            <span class="fs-4 fw-bold">{{ tour.price }} руб.</span>
+                        </div>
+                        <a href="{{ url_for('tour_detail', tour_id=tour.id) }}"
+                           class="btn btn-outline-primary btn-lg">
+                            Подробнее
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+</main>
+
+<!-- Призыв к действию -->
+<section class="cta-section bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h2 class="display-5 fw-bold mb-4">Готовы к путешествию?</h2>
+        <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg px-4 me-3">Оставить заявку</a>
+        <a href="{{ url_for('tours_page') }}" class="btn btn-outline-light btn-lg px-4">Все туры</a>
+    </div>
+</section>
+{% endblock %}

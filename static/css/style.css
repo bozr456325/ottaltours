@@ -1,0 +1,477 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.jumbotron {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero.jpg');
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+/* Стили для подвала */
+footer a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0d6efd !important;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    border-color: #25D366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    border-color: #128C7E;
+}
+
+/* Добавьте эти стили */
+.tour-card {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-out;
+}
+
+.tour-card:nth-child(even) {
+    transform: translateX(50px);
+}
+
+.tour-card.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Задержки для последовательного появления */
+.tour-card.animate:nth-child(1) { transition-delay: 0.1s; }
+.tour-card.animate:nth-child(2) { transition-delay: 0.3s; }
+.tour-card.animate:nth-child(3) { transition-delay: 0.5s; }
+.tour-card.animate:nth-child(4) { transition-delay: 0.7s; }
+.tour-card.animate:nth-child(5) { transition-delay: 0.9s; }
+
+/* Эффект поднятия карточки при наведении */
+.tour-card .card {
+    transition: transform 0.3s ease;
+}
+
+.tour-card .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Герой-секция */
+.hero-section {
+    height: 70vh;
+    min-height: 500px;
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 2rem; /* Добавлены отступы */
+
+}
+
+.video-container {
+    position: absolute;
+    top: 2rem; /* Отступ сверху */
+    left: 2rem; /* Отступ слева */
+    right: 2rem; /* Отступ справа */
+    bottom: 2rem; /* Отступ снизу */
+    z-index: -1;
+    border-radius: 20px; /* Сильно скругленные углы */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3); /* Тень для объема */
+}
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.6) 0%,
+        rgba(0,0,0,0.4) 50%,
+        rgba(0,0,0,0.6) 100%
+    );
+}
+
+/* Контент поверх видео */
+.hero-section .container {
+    height: calc(100% - 4rem);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Остальные стили оставляем без изменений */
+.tour-section {
+    padding: 4rem 0;  /* Уменьшили отступы */
+    position: relative;
+    overflow: hidden;
+}
+
+.tour-card {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.tour-card:nth-child(odd) {
+    transform: translateX(-100px);
+}
+
+.tour-card:nth-child(even) {
+    transform: translateX(100px);
+}
+
+.tour-card.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Призыв к действию */
+.cta-section {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .hero-section {
+        height: auto;
+        padding: 6rem 0;
+    }
+
+    .tour-section {
+        padding: 4rem 0;
+    }
+}
+
+
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; /* Прозрачность видео */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.7) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0.7) 100%
+    );
+}
+
+/* Контент поверх видео */
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 80vh;
+        min-height: 500px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Стили для кнопок */
+.hero-section .btn {
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 140px;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.hero-section .btn-outline-light {
+    color: white;
+    border-color: white;
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Анимация при наведении */
+.hero-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Герой-секция */
+.hero-section {
+    height: 70vh;
+    min-height: 500px;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Текстовые элементы */
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Кнопки */
+.btn-custom {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+/* Адаптация для разных экранов */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .btn-custom {
+        padding: 0.5rem 1rem;
+        min-width: 140px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: 70vh;
+        min-height: 450px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-custom {
+        width: 100%;
+        max-width: 220px;
+        margin: 0 auto;
+    }
+}
+
+/* Стили для разделителя */
+.divider {
+    width: 80px;
+    height: 3px;
+    background: #0d6efd;
+    opacity: 0.7;
+}
+
+/* Отступы и фон для блока туров */
+.container.mb-5 {
+    padding-top: 20px;
+    position: relative;
+}
+
+/* Адаптивные отступы */
+@media (max-width: 768px) {
+    .container.mt-5 {
+        margin-top: 2rem !important;
+    }
+    .container.mb-5 {
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* Стили для блока стран */
+.popular-countries {
+    position: relative;
+}
+
+.country-card {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.country-flag img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+    .country-flag img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .country-card {
+        padding: 1rem !important;
+    }
+}
+
+/* Стили для галереи */
+.gallery-section {
+    background-color: #f8f9fa;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    color: white;
+    padding: 20px;
+    transition: bottom 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+    bottom: 0;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.gallery-overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.gallery-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+/* Адаптация галереи */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .gallery-overlay {
+        padding: 15px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .gallery-overlay {
+        padding: 10px;
+    }
+}
